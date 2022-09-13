@@ -38,7 +38,7 @@ jobs:
           echo "$HOME/.sonar/build-wrapper-macosx-x86" >> $GITHUB_PATH
       - name: Run build-wrapper
         run: |
-          build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make clean all
+         build-wrapper-macosx-x86 --out-dir build_wrapper_output_directory xcodebuild
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
